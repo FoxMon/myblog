@@ -1,24 +1,35 @@
-# myblog
-
-## Project setup
-```
-npm install
-```
+# FoxMon's Blog
 
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Stack
 ```
-npm run build
+Front: Vue.js
+
+Back: Node express
+
+Release: Github page && ...
 ```
 
-### Lints and fixes files
+### Open source library
+`
+Lodash, MUI, Google charts..?
+`
+
+### Function
 ```
-npm run lint
+흐음...
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 개발일기
+### 2022-05-31
+```
+그동안 미루기만 했던 나만의 Blog...
+
+내가 마주한 오류들과 코드들을 이 일기장에 적어보자!
+
+근데 전체적인 디자인은 어떻게 해볼까..?
+```
