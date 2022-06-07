@@ -15,6 +15,7 @@ module.exports = {
     ],
     rules: {
         "no-unused-vars": ["error", { args: "none" }],
+        "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-var": ["error"],
         "object-shorthand": ["error", "methods"],
         "import/extensions": ["error", { vue: "always" }],
