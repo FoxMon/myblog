@@ -11,8 +11,8 @@ ArrayUtil.removeDuplicate = function(array) {
 ArrayUtil.prepareArr = function(array, type) {
     // not array? -> cast to array & prepare array
     const arr = ArrayUtil.removeDuplicate(_.castArray(array))
-    // every elemenet of array must be same type
-    ErrorUtil.invalidParameter(arr.every(a => ErrorUtil.instanceCheck(a. type)))
+    // every elemenet of array must be same
+    arr.forEach(a => ErrorUtil.instanceCheck(a, type))
     return arr
 }
 
