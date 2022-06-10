@@ -31,3 +31,4 @@ ErrorUtil.instanceCheck = function(a, type) {
 }
 
 Object.freeze(ErrorUtil)
+export default ErrorUtil

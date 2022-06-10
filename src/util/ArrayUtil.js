@@ -19,3 +19,6 @@ ArrayUtil.prepareArr = function(array, type) {
 ArrayUtil.isEmpty = function(a) {
     return _.isEmpty(a)
 }
+
+Object.freeze(ArrayUtil)
+export default ArrayUtil

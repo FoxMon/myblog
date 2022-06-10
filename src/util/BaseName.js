@@ -13,4 +13,5 @@ BaseName.freezeObject = function(obj, thisObj) {
     }
 }
 
+Object.freeze(BaseName)
 export default BaseName
