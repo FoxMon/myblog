@@ -1,10 +1,13 @@
+import BoardType from './BoardType'
+import BaseName from '@/util/BaseName'
 import ErrorUtil from '@/util/ErrorUtil'
 import ArrayUtil from '@/util/ArrayUtil'
-import BoardType from './BoardType'
 
-class _BoardListType {
+class _BoardListType extends BaseName {
     constructor(_boardListTypeArray) {
+        super("BoardListType")
         this._boardListTypeArray = _boardListTypeArray
+        BaseName.freezeObject(this, _BoardListType)
     }
 
     asBoardListTypeObject() {
@@ -22,6 +25,10 @@ class _BoardListType {
     boardListTypeArray() {
         return this._boardListTypeArray
     }
+
+    boardListtypeArrayOfNames() {
+        return this._boardListTypeArray.map(b => b.name)
+    }
 }
 
 const BoardListType = {}
@@ -29,12 +36,13 @@ const BoardListType = {}
 BoardListType.createBoardListType = function(_boardTypeArray) {
     const boardTypeArray = ArrayUtil.prepareArr(_boardTypeArray, BoardType)
     ErrorUtil.assert(boardTypeArray.length > 1, 'Array length error')
-    return _BoardListType(boardTypeArray)
-}
 
-BoardListType.createBoardListTypeAsName = function(_boardTypeArray) {
-    const arr = _boardTypeArray.map(b => b.name)
-    return arr
+    const btCateogry = boardTypeArray[0].category
+    boardTypeArray.forEach(b => {
+        // category check
+        ErrorUtil.invalidParameter(b.category == btCateogry)
+    })
+    return _BoardListType(boardTypeArray)
 }
 
 Object.freeze(BoardListType)
