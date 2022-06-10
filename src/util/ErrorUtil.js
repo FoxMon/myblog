@@ -20,6 +20,10 @@ ErrorUtil.invalidParameter = function(command) {
 }
 
 ErrorUtil.typeCheck = function(a, type) {
+    if(typeof a != type) debugger
+}
+
+ErrorUtil.instanceCheck = function(a, type) {
     if(!(a instanceof type)) {
         console.log('Type check error!')
         debugger
